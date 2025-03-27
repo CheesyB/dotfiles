@@ -31,7 +31,6 @@ in
     fzf
     neovim
     ripgrep
-    alacritty
     fd
     tmux
     zoxide

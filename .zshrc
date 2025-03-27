@@ -1,6 +1,14 @@
 export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.config/ohmyzsh
 
+export PATH=~/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
+
+export SUDO_EDITOR=nvim
+
+
+
+
 # Path to your oh-my-zsh installation.
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -58,11 +66,12 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
 
- export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -73,6 +82,9 @@ fi
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
-
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

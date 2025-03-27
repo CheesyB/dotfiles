@@ -15,13 +15,13 @@ add_newline = false
 style = "#00b7ff"
 
 [character]
-success_symbol = "[❯](#57b500)"
+success_symbol = "[❯](#63df00)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "green"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
