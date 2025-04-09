@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  fonts,
   ...
 }: 
 let
@@ -14,6 +15,15 @@ in
   # manage.
   home.username = "timb";
   home.homeDirectory = "/home/timb";
+  
+  #targets.genericLinux.enable = true;
+  #xdg.mime.enable = true;
+
+  
+  nixGL.packages = import <nixgl> { inherit pkgs; };
+  nixGL.defaultWrapper = "mesa";
+  nixGL.offloadWrapper = "nvidiaPrime";
+  nixGL.installScripts = [ "mesa" "nvidiaPrime" ];
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -26,17 +36,22 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    bat
-    fzf
-    neovim
-    ripgrep
-    fd
-    tmux
-    zoxide
-    eza
-    lazygit
-    starship
+  fonts.fontconfig.enable = true;
+  
+home.packages = with pkgs; [
+    pkgs.bat
+    pkgs.fzf
+    pkgs.neovim
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.tmux
+    pkgs.zoxide
+    pkgs.eza
+    pkgs.lazygit
+    pkgs.starship
+    pkgs.nerd-fonts.meslo-lg
+    pkgs.postgresql
+
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -45,7 +60,6 @@ in
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    #(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -54,6 +68,8 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -69,7 +85,7 @@ in
 
     ".config/alacritty/alacritty.toml".source = "${dotfiles}/alacritty.toml";
     ".config/ohmyzsh/aliases.zsh".source = "${dotfiles}/aliases.zsh";
-    ".config/startship/startship.toml".source = "${dotfiles}/starship.toml";
+    ".config/starship/starship.toml".source = "${dotfiles}/starship.toml";
 
 
     
