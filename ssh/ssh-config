@@ -3,3 +3,9 @@
 #    User git
 #    IdentityFile ~/.ssh/work-azure
 #    IdentitiesOnly yes
+#
+Host driver 
+  HostName 185.113.125.120
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/driver
+
