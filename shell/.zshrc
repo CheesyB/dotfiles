@@ -2,11 +2,10 @@ export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.config/ohmyzsh
 
 export PATH=~/.local/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
 
 export SUDO_EDITOR=nvim
 
-
+export AWS_PROFILE=dev-admin
 
 
 # Path to your oh-my-zsh installation.
@@ -67,6 +66,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   fzf-tab
+  aws
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -80,6 +80,7 @@ else
   export EDITOR='nvim'
 fi
 
+
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
  eval "$(direnv hook zsh)"
@@ -87,10 +88,8 @@ eval "$(fzf --zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 eval "$(uv generate-shell-completion zsh)"
+eval "$(brew shellenv)"
+

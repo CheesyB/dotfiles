@@ -7,6 +7,7 @@ $git_state\
 $git_status\
 $cmd_duration\
 $python\
+$aws\
 $character"""
 
 add_newline = false
@@ -45,3 +46,12 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[aws]
+symbol = " "
+style = ""
+
+format = """
+[[$symbol](#FF9900) \
+[$profile](#63DF00) \
+[$region](#00B7FF)]($style) """

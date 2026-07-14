@@ -1,4 +1,9 @@
 
+[general]
+import = [
+    "~/.config/alacritty/alacritty-theme/themes/gruvbox_material_medium_dark.toml"
+]
+
 [window]
 option_as_alt = "Both"
 
@@ -8,67 +13,4 @@ bold = { family = "MesloLGS Nerd Font", style = "Bold"}
 italic = { family = "MesloLGS Nerd Font", style = "Italic"}
 bold_italic = { family = "MesloLGS Nerd Font", style = "Bold Italic"}
 size = 12.0
-
-
-# Colors (Tender)
-[colors]
-[colors.primary]
-background = "#282828"
-foreground = "#eeeeee"
-
-[colors.normal]
-black   = "#282828"
-red     = "#f43753"
-green   = "#c9d05c"
-yellow  = "#ffc24b"
-blue    = "#00b7ff" #folder
-magenta = "#d3b987"
-cyan    = "#00ffc8" #symlinks
-white   = "#eeeeee"
-
-[colors.bright]
-black   = "#4c4c4c"
-red     = "#f43753"
-green   = "#c9d05c"
-yellow  = "#ffc24b"
-blue    = "#00a7ff" 
-magenta = "#d3b987"
-cyan    = "#00bddf"#symlinks
-white   = "#feffff"
-
-
-# Nice colors
-#https://coolors.co/00b7ff-63df00-261c15-f7f7f2-f05d23
-
-
-#[colors]
-#[colors.primary]
-#background = "#282828"
-#foreground = "#eeeeee"
-#
-#[colors.normal]
-#black   = "#282828"
-#red     = "#f43753"
-#green   = "#63DF00"
-#yellow  = "#ffc24b"
-#blue    = "#00b7ff" #folder
-#magenta = "#d3b987"
-#cyan    = "#73cef4"
-#white   = "#eeeeee"
-#
-#[colors.bright]
-#black   = "#4c4c4c"
-#red     = "#f43753"
-#green   = "#c9d05c"
-#yellow  = "#ffc24b"
-#blue    = "#00a7ff" 
-#magenta = "#d3b987"
-#cyan    = "#89deff" #symlinks
-#white   = "#feffff"
-#
-#00B7FF
-#63DF00
-#E53D00
-#FCFFF7
-#046865
 
