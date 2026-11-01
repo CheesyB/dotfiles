@@ -11,11 +11,12 @@
 	defaultBranch = main
 [color]
 	ui = auto
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-
 [credential "https://gitlab.collaborationlayer-traton.com"]
 	provider = generic
 	gitLabDevClientId = 
 [credential]
 	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
