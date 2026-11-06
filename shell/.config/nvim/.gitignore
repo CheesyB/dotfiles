@@ -1,0 +1,12 @@
+# Plugins (cloned by vim.pack on first run)
+pack/
+
+# Compiled treesitter parsers
+parser/
+
+# Neovim generated
+.netrwhist
+.luarc.json
+
+# OS
+.DS_Store

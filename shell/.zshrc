@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 export ZSH=~/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.config/ohmyzsh
 
@@ -69,6 +73,7 @@ plugins=(
   aws
 )
 
+
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
@@ -93,3 +98,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 eval "$(uv generate-shell-completion zsh)"
 eval "$(brew shellenv)"
 
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+unsetopt correct
+unsetopt correct_all
